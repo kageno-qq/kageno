@@ -71,8 +71,6 @@ p, button {
   }
 }
 
-
-
 .container {
   display: flex;
   align-items: center;
@@ -83,10 +81,9 @@ p, button {
 details[open] {
   text-align: left;
 
-  summary {
+  .summary-pk {
     color: #8e8cd8;
     border-bottom: 3px solid #8e8cd8;
-
   }
 
   &::details-content {
@@ -112,14 +109,41 @@ summary {
     width: 45%;
     height: 100%;
     background: #2b2b2b;
-    
   }
+}
 
+@media screen and (min-width: 980px) {
+  .mobile {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 980px) {
-  .body {
+  .body, .pk {
     display: none;
+  }
   
+  details[open] {
+    text-align: left;
+  
+    summary {
+      color: #8e8cd8;
+      text-align: right ;
+  
+    }
+  
+    &::details-content {
+      color: #ffffff;
+      position: absolute;
+      top: 8%;
+      right: 6%;
+    }
+  }
+
+  .summary-mobile-menu { 
+    background: #2b2b2b;
+    width: 25px;
+    height: 25px;
+    margin-left: 25%;
   }
 }
